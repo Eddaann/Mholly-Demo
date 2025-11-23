@@ -7,36 +7,60 @@
 
 > **Proyecto:** Plataforma B2C para PyME de manufactura ortopédica animal.
 > **Modalidad:** Co-desarrollo (Equipo de 2 personas).
-> **Mi Enfoque:** Integración de Pagos, Seguridad (RBAC) y Componentes Reactivos.
+> **Mi Enfoque:** Integración de Pagos, Seguridad (RBAC) y Experiencia del Cliente Reactiva.
 
 ## 📖 Sobre el Proyecto
-**Mholly** es una solución digital desarrollada en colaboración para conectar dueños de mascotas con un taller de prótesis 3D.
-Mientras mi compañero se enfocaba en la gestión de pacientes, mi rol fue asegurar la **infraestructura transaccional y la seguridad de la plataforma**.
+**Mholly** es una solución digital desarrollada en colaboración para conectar dueños de mascotas con un taller de prótesis 3D. El sistema permite realizar pedidos personalizados y dar seguimiento al proceso de manufactura.
+
+Mi rol principal fue asegurar la **infraestructura transaccional**, la seguridad mediante roles y la creación de interfaces reactivas modernas.
+
+![Landing Page](assets/landing_hero.png)
 
 ---
 
-## 💳 Mis Contribuciones Principales
+## 🤝 Experiencia del Cliente (Mis Contribuciones Frontend)
 
-### Integración de Pasarelas de Pago
-Fui responsable de conectar las APIs de **PayPal y MercadoPago**.
-* Implementé la lógica para capturar los webhooks y actualizar el estado del pedido automáticamente (de "Pendiente" a "Pagado").
-![Checkout](assets/checkout_methods.png)
+Implementé **Laravel Volt** para modernizar la experiencia de usuario, reduciendo la latencia en interacciones clave del proceso de compra y seguimiento.
 
-### Arquitectura de Roles (RBAC)
-Diseñé el sistema de permisos para diferenciar entre:
-* **Administrador:** Control total del negocio.
-* **Comprador:** Acceso limitado a sus pedidos y mascotas.
-Esto asegura que la data sensible esté protegida.
-![Admin Panel](assets/admin_roles.png)
+### Flujo de Pedido y Tracking
+Desarrollé las vistas para que los clientes inicien sus pedidos personalizados y, crucialmente, una **Línea de Tiempo Reactiva** que les permite ver el estado real de su manufactura (En Fabricación, Enviado, etc.), reduciendo la incertidumbre de la compra.
 
-### Frontend Reactivo con Laravel Volt
-Implementé **Laravel Volt** para modernizar la experiencia de usuario en el carrito de compras y el seguimiento de pedidos, reduciendo la latencia en interacciones clave.
-![Nuevo Pedido](assets/client_new_order.png)
+| Inicio de Pedido (Volt) | Tracking en Tiempo Real |
+|:---:|:---:|
+| ![Nuevo Pedido](assets/client_new_order.png) | ![Timeline](assets/client_tracking.png) |
 
 ---
 
-## 🤝 Trabajo Colaborativo
-El desarrollo se realizó utilizando **Git Flow**, coordinando *merges* y revisiones de código para integrar el módulo de gestión de pacientes con el sistema de facturación y pedidos.
+## 🔐 Gestión Administrativa y Seguridad
+
+Colaboré en la creación del panel administrativo, enfocándome en la seguridad y la lógica de negocio detrás de la gestión de órdenes.
+
+### Arquitectura de Roles (RBAC) y Dashboard
+Diseñé el sistema de permisos para diferenciar estrictamente entre Administradores y Compradores, asegurando la protección de datos sensibles. El administrador cuenta con un dashboard centralizado para monitorear KPIs y el flujo de pedidos.
+
+| Dashboard Admin (KPIs) | Gestión de Pedidos |
+|:---:|:---:|
+| ![Admin Dash](assets/admin_dashboard.png) | ![Admin Orders](assets/admin_orders.png) |
+
+---
+
+## 💳 Integraciones Críticas (Backend)
+
+Aunque no se muestran visualmente por seguridad, fui responsable de las implementaciones "invisibles" más críticas del sistema:
+
+### 1. Pasarelas de Pago
+Conecté las APIs REST de **PayPal y MercadoPago**. Implementé la lógica de *webhooks* para que, al confirmarse un pago exitoso, el sistema actualice automáticamente el estado del pedido en la base de datos sin intervención humana.
+
+### 2. Sistema de Soporte Interno
+Implementé un módulo de mensajería interna que conecta directamente al cliente con el administrador para resolver dudas sobre medidas o detalles del producto.
+![Chat Soporte](assets/support_chat.png)
+
+---
+
+## 🛠 Stack & Metodología
+* **Backend:** Laravel 10, PHP 8.2, MySQL.
+* **Frontend:** Laravel Volt (Functional API), Alpine.js, TailwindCSS.
+* **Colaboración:** Uso de Git Flow para integrar el módulo de gestión de pacientes (desarrollado por mi compañero) con mis módulos de facturación, pedidos y seguridad.
 
 ---
 
